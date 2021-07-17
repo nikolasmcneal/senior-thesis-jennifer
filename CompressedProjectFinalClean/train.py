@@ -33,7 +33,7 @@ class MyDataset(torch.utils.data.Dataset):
     return self.X[index]
 
 # Load the training data and perform preprocessing
-data_prefix = "../../../../user_data/jjhuang1/train_data"
+data_prefix = "../../../../../user_data/jjhuang1/train_data"
 train_data = []
 num_files = 0
 for filename in os.listdir(data_prefix):
