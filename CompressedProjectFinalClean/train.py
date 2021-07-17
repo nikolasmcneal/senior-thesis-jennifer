@@ -66,6 +66,10 @@ if torch.cuda.is_available():
     print('Using GPU.')
     model.cuda()
 
+if torch.cuda.device_count() > 1:
+    print("Let's use", torch.cuda.device_count(), "GPUs!")
+    model = nn.DataParallel(model)
+    
 optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
 def lr_scheduler(optimizer, epoch):
